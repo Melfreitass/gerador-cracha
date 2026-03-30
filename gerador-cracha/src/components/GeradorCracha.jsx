@@ -10,54 +10,54 @@ function GeradorCracha() {
     <div className={styles.painel}>
       <div className={styles.formulario}>
         <h2>Configurações</h2>
-        
+
         <label>Nome do Visitante:</label>
-        <input 
-          type="text" 
-          placeholder="Ex: Ana Souza" 
+        <input
+          type="text"
+          placeholder="Ex: Ana Souza"
           value={nome}
           onChange={(e) => setNome(e.target.value)}
         />
 
         <label>Cargo/Empresa:</label>
-        <input 
-          type="text" 
-          placeholder="Ex: Desenvolvedora" 
+        <input
+          type="text"
+          placeholder="Ex: Desenvolvedora"
           value={cargo}
           onChange={(e) => setCargo(e.target.value)}
         />
-        
+
         {/* Botão que zera os estados e limpa os campos */}
-        <button onClick={() => {setNome(""); setCargo("");}}>
+        <button
+          onClick={() => {
+            setNome("");
+            setCargo("");
+          }}
+        >
           Limpar Tudo
         </button>
       </div>
-
       <div className={styles.areaCracha}>
         <div className={styles.cracha}>
-          
           <div className={styles.topo}>
             <div className={styles.furo}></div>
             <p>EVENTO TECH 2024</p>
           </div>
-          
+
           <div className={styles.corpo}>
             {/* O nome digitado aparece aqui na hora! */}
-            <h1 className={styles.nomeExibido}>
-              {nome || "SEU NOME AQUI"}
-            </h1>
-            
+            <h1 className={styles.nomeExibido}>{nome || "SEU NOME AQUI"}</h1>
+
             {/* O cargo digitado aparece aqui na hora! */}
-            <p className={styles.cargoExibido}>
-              {cargo || "Cargo ou Empresa"}
-            </p>
+            <p className={styles.cargoExibido}>{cargo || "Cargo ou Empresa"}</p>
           </div>
 
-          <div className={styles.rodape}>
+          <div
+            className={styles.rodape}
+            style={{ backgroundColor: cargo === "Diretor" ? "gold" : "" }}
+          >
             <span>VISITANTE</span>
           </div>
-          
-
         </div>
       </div>
     </div>
